@@ -10,8 +10,5 @@ NS=$(kubectl get -f ../resources/*.yaml -o custom-columns='ns:metadata.namespace
 
 sleep 3
 
-kubectl exec -i $POD -n $NS -- sh -c '[ -d /test ] || mkdir /test'
-ls *.sh | xargs -I{} kubectl cp {} $NS/$POD:/test/
-kubectl exec -i $POD -n $NS -- sh -c 'sh /test/setup-alpine.sh'
-
+kubectl exec -i  $POD -n $NS -- sh -c 'sh /test/setup-alpine.sh'
 kubectl exec -it $POD -n $NS -- sh
