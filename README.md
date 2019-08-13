@@ -1,10 +1,10 @@
 # Test (Local)
-## Setup
 ### MacOS
-* FUSE in MacOS - https://osxfuse.github.io/
+* rclone - https://rclone.org/install/#macos-installation-from-precompiled-binary
+* FUSE for macOS 3.10.2 (with MacFUSE compatibility layer) - https://osxfuse.github.io/
 
 ## Test
-``` bash
+```console
 $ ls -l
 total 32
 -rw-r--r--  1 hoon  staff   14  8 13 20:56 README.md
@@ -22,7 +22,7 @@ $ bash -x test-rclone-mount.sh
 
 # Test (Pod)
 ## Setup
-```
+```console
 $ bash bin/setup-pod.sh
 (create pod...)
 # hostname
