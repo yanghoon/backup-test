@@ -15,4 +15,4 @@ rm -rf $DIST && mkdir -p $DIST
 rclone copy $RCLONE/$FILE .tmp -vv
 tar -zxpf .tmp/$FILE -C $DIST
 
-diff -NEwburq . $DIST -X .exclude
+diff -NEwburq . $DIST | grep -v -f .exclude
