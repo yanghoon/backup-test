@@ -3,7 +3,8 @@
 FILE=resources/tools-backup-test-agent.yaml
 
 kubectl delete -f $FILE
-kubectl create -f $(dirname $FILE)
+kubectl apply -f $(dirname $FILE)
+kubectl apply -f $(dirname $FILE)/*.local
 
 set -e
 
