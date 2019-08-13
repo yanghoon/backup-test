@@ -15,6 +15,7 @@ drwxr-xr-x  6 hoon  staff  192  8 13 18:36 resources
 -rw-r--r--  1 hoon  staff  494  8 13 20:49 test-rclone-rcat.sh
 -rw-r--r--  1 hoon  staff  455  8 13 20:53 test-rsync.sh
 
+$ rclone config
 $ bash -x test-rsync.sh
 $ bash -x test-rclone-rcat.sh
 $ bash -x test-rclone-mount.sh
@@ -23,8 +24,11 @@ $ bash -x test-rclone-mount.sh
 # Test (Pod)
 ## Setup
 ```console
+$ vi resources/tools-backup-rclone-config.yaml
+(edit access_key_id, secret_access_key)
 $ bash bin/setup-pod.sh
 (create pod...)
+
 # hostname
 tools-backup-test-agent
 # which kubectl rsync rclone
