@@ -23,7 +23,7 @@ spec:
     - tail -f /dev/null
     command:
     - /bin/sh
-    image: alpine
+    image: alpine:3.9
     imagePullPolicy: IfNotPresent
     name: alpine 
     resources:
@@ -34,6 +34,8 @@ spec:
         cpu: 100m
         memory: 128Mi
     volumeMounts:
+    - mountPath: /root/.config/rclone
+      name: rclone-config
     - mountPath: /etc/localtime
       name: timezone
   serviceAccountName: zcp-system-admin
@@ -51,7 +53,10 @@ spec:
     operator: Exists
     tolerationSeconds: 300
   volumes:
-  - hostPath:
+  - name: rclone-config
+    configMap:
+      name: tools-backup-rclone-config
+  - name: timezone
+    hostPath:
       path: /usr/share/zoneinfo/Asia/Seoul
       type: ""
-    name: timezone

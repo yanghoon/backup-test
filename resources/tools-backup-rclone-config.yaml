@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: tools-backup-rclone-config
+  namespace: zcp-system
+data:
+  #/root/.config/rclone/rclone.conf
+  rclone.conf: |-
+    [s3]
+    type = s3
+    provider = IBMCOS
+    env_auth = false
+    access_key_id = 
+    secret_access_key = 
+    endpoint = s3.ap-geo.objectstorage.softlayer.net
+    location_constraint = ap-standard
+    acl = private
+
