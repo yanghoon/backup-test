@@ -11,7 +11,7 @@ echo -e ".git\n.tmp\n.gitignore" > .exclude
 time tar --exclude-from=.exclude -zcvpf - . | rclone rcat $RCLONE/$FILE -vv
 rclone lsl $RCLONE --include '*.tgz'
 
-rm -rf $DIST && mkdir $DIST
+rm -rf $DIST && mkdir -p $DIST
 rclone copy $RCLONE/$FILE .tmp -vv
 tar -zxpf .tmp/$FILE -C $DIST
 
