@@ -10,6 +10,6 @@ MOUNT=/tmp/rclone/$REMOTE/$DIR
 
 time rclone lsd $RCLONE
 df -h
-rclone mount $RCLONE $MOUNT --daemon 
+rclone mount $RCLONE $MOUNT #--daemon 
 
 ls -lh $MOUNT
