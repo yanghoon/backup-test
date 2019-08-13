@@ -6,7 +6,7 @@ DIR=zcp-backup-gitea
 RCLONE=$REMOTE:$DIR
 MOUNT=/tmp/rclone/$REMOTE/$DIR
 
-[ -d ] || mkdir -p $MOUNT
+[ -d $MOUNT ] || mkdir -p $MOUNT
 
 time rclone lsd $RCLONE
 df -h
