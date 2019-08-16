@@ -1,6 +1,6 @@
 #!/bin/bash
 
-POD=zcp-gitea-gitea-67ddcb6779-trkmp
+POD=zcp-gitea-gitea-67ddcb6779-f2dsm
 NS=zcp-system
 
 time bin/krsync.sh -avz --progress --stats $POD@$NS:/data .tmp/gitea-data --exclude 'data/gitea/sessions' 2>&1 | tee .tmp/sync.log

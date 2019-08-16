@@ -23,7 +23,7 @@ spec:
     - tail -f /dev/null
     command:
     - /bin/sh
-    image: alpine:3.9
+    image: alpine:3.7
     imagePullPolicy: IfNotPresent
     name: alpine 
     resources:
